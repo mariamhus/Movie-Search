@@ -15,7 +15,7 @@ export function FeaturedMovie({ movie }: { movie: MovieSummary }) {
       {backdrop && <img src={backdrop} alt="" className="absolute inset-0 size-full object-cover object-top" />}
       <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/55 to-bg/10 sm:bg-gradient-to-r sm:from-bg/95 sm:via-bg/60 sm:to-transparent" />
       <div className="relative flex min-h-[30rem] max-w-2xl flex-col justify-end px-4 pt-40 pb-8 sm:min-h-[34rem] sm:px-10 sm:pb-12">
-        <p className="font-semibold text-bulb">Number one trending this week</p>
+        <p className="font-semibold text-accent">Number one trending this week</p>
         <h1 id="featured-title" className="mt-2 font-display text-[clamp(3.25rem,9vw,6.75rem)] leading-[0.88] font-extrabold tracking-tight">
           {movie.title}
         </h1>

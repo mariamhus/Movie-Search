@@ -75,7 +75,7 @@ export function SearchBox() {
             apply("");
           }
         }}
-        className="h-11 w-full rounded-full border border-line bg-surface pr-11 pl-11 text-[15px] placeholder:text-muted focus:border-bulb focus:outline-none"
+        className="h-11 w-full rounded-full border border-line bg-surface pr-11 pl-11 text-[15px] placeholder:text-muted focus:border-accent focus:outline-none"
       />
       {searching ? (
         <LoaderCircle

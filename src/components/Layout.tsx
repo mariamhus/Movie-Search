@@ -2,6 +2,7 @@ import { Bookmark } from "lucide-react";
 import { Link, NavLink, Outlet, ScrollRestoration } from "react-router";
 import { SearchBox } from "./SearchBox";
 import { SetupNotice } from "./SetupNotice";
+import { ThemeToggle } from "./ThemeToggle";
 import { useWatchlist } from "../hooks/useWatchlist";
 import { hasApiKey } from "../lib/tmdb";
 
@@ -21,7 +22,7 @@ export function Layout() {
           <div className="col-span-2 row-start-2 md:col-span-1 md:row-start-auto">
             <SearchBox />
           </div>
-          <nav aria-label="Main" className="flex justify-end">
+          <nav aria-label="Main" className="flex items-center justify-end gap-2">
             <NavLink
               to="/watchlist"
               className={({ isActive }) =>
@@ -38,6 +39,7 @@ export function Layout() {
                 </span>
               )}
             </NavLink>
+            <ThemeToggle />
           </nav>
         </div>
       </header>

@@ -9,6 +9,7 @@ import { MoviePage } from "./pages/MoviePage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { RouteError } from "./pages/RouteError";
 import { WatchlistPage } from "./pages/WatchlistPage";
+import "./lib/theme";
 import "./index.css";
 
 const queryClient = new QueryClient({

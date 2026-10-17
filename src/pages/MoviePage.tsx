@@ -46,7 +46,7 @@ function MovieView({ movie }: { movie: MovieDetails }) {
           title={movie.title}
           size="w500"
           eager
-          className="w-40 shadow-[0_20px_50px_-15px_rgb(0_0_0/0.9)] ring-1 ring-white/10 sm:ml-8 sm:w-52 md:w-[calc(100%-2rem)]"
+          className="w-40 shadow-[0_20px_50px_-15px_rgb(0_0_0/0.9)] ring-1 ring-ink/10 sm:ml-8 sm:w-52 md:w-[calc(100%-2rem)]"
         />
 
         <div className="md:pt-36">

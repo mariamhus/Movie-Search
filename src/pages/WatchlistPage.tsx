@@ -55,7 +55,7 @@ export function WatchlistPage() {
                 else next.set("sort", event.target.value);
                 setParams(next, { replace: true });
               }}
-              className="h-10 rounded-full border border-line bg-surface px-4 text-sm font-medium focus:border-bulb focus:outline-none"
+              className="h-10 rounded-full border border-line bg-surface px-4 text-sm font-medium focus:border-accent focus:outline-none"
             >
               {SORTS.map((option) => (
                 <option key={option.id} value={option.id}>

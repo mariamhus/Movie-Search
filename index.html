@@ -7,6 +7,13 @@
     <meta name="description" content="Search movies, see what's trending, watch trailers, and keep a watchlist. Powered by TMDB." />
     <meta name="theme-color" content="#10141f" />
     <title>Movie Search</title>
+    <script>
+      try {
+        var t = localStorage.getItem("movies:theme");
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
