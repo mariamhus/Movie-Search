@@ -1,0 +1,123 @@
+@import "@fontsource-variable/big-shoulders-display";
+@import "@fontsource-variable/figtree";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Big Shoulders Display Variable", "Arial Narrow", ui-sans-serif, sans-serif;
+  --color-bg: #10141f;
+  --color-surface: #181e2c;
+  --color-raised: #212839;
+  --color-ink: #eef0f5;
+  --color-muted: #9aa3b5;
+  --color-line: #2a3246;
+  --color-bulb: #f5b83d;
+  --color-bulb-ink: #1f1504;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-bulb);
+    outline-offset: 2px;
+  }
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+code {
+  border-radius: 0.3rem;
+  background: var(--color-surface);
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .section-title {
+    @apply font-display text-3xl font-bold tracking-tight;
+  }
+
+  .button-primary {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full bg-bulb px-6 font-semibold text-bulb-ink transition-[filter] hover:brightness-110;
+  }
+
+  .button-secondary {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-full border border-line bg-surface/80 px-5 font-semibold backdrop-blur-md transition-colors hover:border-muted disabled:opacity-60 aria-pressed:border-bulb/60 aria-pressed:text-bulb;
+  }
+
+  .icon-button {
+    @apply grid size-10 place-items-center rounded-full border border-line transition-colors hover:bg-surface;
+  }
+
+  .chip {
+    @apply h-9 shrink-0 rounded-full border border-line px-4 text-sm font-medium whitespace-nowrap transition-colors hover:border-muted aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-bg;
+  }
+
+  .link {
+    @apply underline decoration-line underline-offset-4 transition-colors hover:text-ink hover:decoration-bulb;
+  }
+
+  .skip-link {
+    @apply sr-only rounded-full bg-bulb px-4 py-2 font-semibold text-bulb-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50;
+  }
+
+  .setup-step {
+    @apply flex gap-4 text-lg;
+  }
+
+  .setup-number {
+    @apply grid size-8 shrink-0 place-items-center rounded-full bg-bulb font-bold text-bulb-ink;
+  }
+
+  .trailer {
+    @apply m-auto w-[min(64rem,calc(100%-2rem))] max-w-none rounded-2xl border border-line bg-surface p-4 text-ink;
+  }
+
+  .trailer::backdrop {
+    background: rgb(4 6 11 / 0.88);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .featured {
+    animation: fade-in 700ms ease-out;
+  }
+
+  .trailer[open] {
+    animation: fade-in 200ms ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
